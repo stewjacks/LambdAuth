@@ -1,13 +1,14 @@
 {
-  "AWS_ACCOUNT_ID": "123412341234",
-  "REGION": "eu-west-1",
-  "BUCKET": "bucket",
-  "MAX_AGE": "10",
-  "DDB_TABLE": "LambdAuthUsers",
-  "IDENTITY_POOL_NAME": "LambdAuth",
-  "DEVELOPER_PROVIDER_NAME": "login.mycompany.myapp",
-  "EXTERNAL_NAME": "My Authentication",
-  "EMAIL_SOURCE": "email@example.com",
-  "VERIFICATION_PAGE": "http://bucket.s3.amazonaws.com/verify.html",
-  "RESET_PAGE": "http://bucket.s3.amazonaws.com/reset.html"
+  "AWS_ACCOUNT_ID": "126568391544",
+  "REGION": "us-east-1",
+  "BUCKET": "metrolinx-salt",
+  "MAX_AGE": "600",
+  "DDB_TABLE": "MetrolinxAuthUsers",
+  "IDENTITY_POOL_NAME": "metrolinx_salientsalt_id",
+  "DEVELOPER_PROVIDER_NAME": "com.salientsalt.metrolinx",
+  "EXTERNAL_NAME": "Metrolinx Authenication",
+  "EMAIL_SOURCE": "stewart.jackson@gmail.com",
+  "VERIFICATION_PAGE": "http://metrolinx-salt.s3.amazonaws.com/verify.html",
+  "RESET_PAGE": "http://metrolinx-salt.s3.amazonaws.com/reset.html",
+  "IDENTITY_POOL_ID": "us-east-1:449be54f-30f4-4652-9477-45cead876077"
 }
