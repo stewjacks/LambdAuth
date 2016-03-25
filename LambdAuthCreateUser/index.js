@@ -30,7 +30,7 @@ function computeHash(password, salt, fn) {
 	}
 }
 
-function storeUser(email, password, salt, fn) {
+function storeUser(firstname, lastname, email, password, salt, fn) {
 	// Bytesize
 	var len = 128;
 	crypto.randomBytes(len, function(err, token) {
@@ -39,6 +39,12 @@ function storeUser(email, password, salt, fn) {
 		dynamodb.putItem({
 			TableName: config.DDB_TABLE,
 			Item: {
+				firstname: {
+					S: firstname
+				},
+				lastname: {
+					S.lastname
+				},
 				email: {
 					S: email
 				},
@@ -94,6 +100,8 @@ function sendVerificationEmail(email, token, fn) {
 }
 
 exports.handler = function(event, context) {
+	var firstname = event.firstname;
+	var lastname = event.lastname;
 	var email = event.email;
 	var clearPassword = event.password;
 
@@ -101,7 +109,7 @@ exports.handler = function(event, context) {
 		if (err) {
 			context.fail('Error in hash: ' + err);
 		} else {
-			storeUser(email, hash, salt, function(err, token) {
+			storeUser(firstname, lastname, email, hash, salt, function(err, token) {
 				if (err) {
 					if (err.code == 'ConditionalCheckFailedException') {
 						// userId already found

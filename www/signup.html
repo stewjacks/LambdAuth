@@ -18,6 +18,14 @@
   </div>
   <table>
     <tr>
+      <td>First Name</td>
+      <td><input type="text" id="firstname" size="20">
+    </tr>
+    <tr>
+      <td>Last Name</td>
+      <td><input type="text" id="lastname" size="20">
+    </tr>
+    <tr>
       <td>Email</td>
       <td><input type="email" id="email" size="20">
     </tr>
@@ -42,6 +50,8 @@
   </table>
   <script>
   var info = document.getElementById('info');
+  var firstname = document.getElementById('firstname');
+  var lastname = document.getElementById('lastname');
   var email = document.getElementById('email');
   var password = document.getElementById('password');
   var verifyPassword = document.getElementById('verifyPassword');
@@ -56,6 +66,8 @@
         info.innerHTML = 'Passwords are <b>different</b>, please check.';
     } else {
       var input = {
+        firstname: firstname.value,
+        lastname: lastname.value,
         email: email.value,
         password: password.value,
       };

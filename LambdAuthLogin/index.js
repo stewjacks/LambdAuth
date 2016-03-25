@@ -66,6 +66,8 @@ function getToken(email, fn) {
 }
 
 exports.handler = function(event, context) {
+	var firstname = event.firstname;
+	var lastname = event.lastname;
 	var email = event.email;
 	var clearPassword = event.password;
 
